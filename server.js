@@ -16,7 +16,8 @@ server.get('/assets', (req, res) => {
     };
 
     axios.request(options).then(function (response) {
-        console.log(response.data);
+        console.log(response.data['assets']);
+        res.status(200).json(response.data['assets'])
     }).catch(function (error) {
         console.error(error);
     });
